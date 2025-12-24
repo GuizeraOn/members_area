@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Herramientas - Member Area</title>
+</head>
+
+<body class="bg-brand-black min-h-screen flex flex-col pb-24 font-sans selection:bg-brand-neon selection:text-black">
+
+    <!-- Top Nav -->
+    <nav
+        class="fixed top-0 w-full z-50 flex items-center bg-black/90 backdrop-blur-md h-16 shrink-0 border-b border-white/5">
+        <div class="px-6 w-full flex items-center justify-between">
+            <h1 class="text-sm font-bold tracking-wider text-white uppercase truncate">The Vault / Herramientas</h1>
+            <div class="w-10"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col relative w-full pt-20 px-6 animate-fade-in">
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-white mb-2">Caja de Herramientas</h2>
+            <p class="text-gray-400 text-sm">Activos exclusivos para acelerar tu libertad financiera.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 pb-4">
+
+            <!-- Tool 1: Simulator -->
+            <div
+                class="relative group bg-[#141414] border border-white/5 rounded-2xl p-6 hover:border-brand-neon/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-start justify-between mb-8">
+                    <div
+                        class="p-3 bg-brand-neon/10 rounded-xl text-brand-neon border border-brand-neon/20 shadow-[0_0_15px_rgba(57,255,20,0.1)]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 7h6m0 3.666v5.168a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75V10.666a.75.75 0 01.75-.75h4.5zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[10px] bg-white/5 px-2 py-1 rounded text-gray-400 font-mono tracking-widest uppercase">Premium</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-brand-neon transition-colors">Simulador de
+                    Renta</h3>
+                <p class="text-xs text-gray-500 mb-6 font-light">Calculadora avanzada de interés compuesto y dividendos.
+                </p>
+
+                <a href="/simulator/"
+                    class="w-full btn-primary py-3 rounded-lg text-xs font-bold shadow-neon hover:shadow-neon-hover flex items-center justify-center space-x-2 transition-transform active:scale-95 text-center block">
+                    <span>Acceder al Simulador</span>
+                </a>
+            </div>
+
+            <!-- Tool 2: Spreadsheet -->
+            <div
+                class="relative group bg-[#141414] border border-white/5 rounded-2xl p-6 hover:border-brand-neon/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-start justify-between mb-8">
+                    <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400 border border-blue-500/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[10px] bg-white/5 px-2 py-1 rounded text-gray-400 font-mono tracking-widest uppercase">Excel</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">Control
+                    Financiero</h3>
+                <p class="text-xs text-gray-500 mb-6 font-light">Plantilla maestra para organizar tus gastos e ingresos.
+                </p>
+
+                <button
+                    class="w-full bg-white/5 hover:bg-white/10 text-white py-3 rounded-lg text-xs font-bold border border-white/10 flex items-center justify-center space-x-2 transition-transform active:scale-95">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Descargar Plantilla</span>
+                </button>
+            </div>
+
+            <!-- Tool 3: Checklist -->
+            <div
+                class="relative group bg-[#141414] border border-white/5 rounded-2xl p-6 hover:border-brand-neon/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-start justify-between mb-8">
+                    <div class="p-3 bg-red-500/10 rounded-xl text-red-500 border border-red-500/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[10px] bg-white/5 px-2 py-1 rounded text-gray-400 font-mono tracking-widest uppercase">PDF</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-red-500 transition-colors">Protocolo
+                    Anti-Deudas</h3>
+                <p class="text-xs text-gray-500 mb-6 font-light">Guía paso a paso para eliminar pasivos tóxicos.</p>
+
+                <button
+                    class="w-full bg-white/5 hover:bg-white/10 text-white py-3 rounded-lg text-xs font-bold border border-white/10 flex items-center justify-center space-x-2 transition-transform active:scale-95">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Descargar Guía</span>
+                </button>
+            </div>
+
+            <!-- Tool 4: Global Guide -->
+            <div
+                class="relative group bg-[#141414] border border-white/5 rounded-2xl p-6 hover:border-brand-neon/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-start justify-between mb-8">
+                    <div class="p-3 bg-purple-500/10 rounded-xl text-purple-400 border border-purple-500/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[10px] bg-white/5 px-2 py-1 rounded text-gray-400 font-mono tracking-widest uppercase">Ebook</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">Inversión
+                    Global USA</h3>
+                <p class="text-xs text-gray-500 mb-6 font-light">Manual para abrir cuentas en dólares desde LATAM.</p>
+
+                <button
+                    class="w-full bg-white/5 hover:bg-white/10 text-white py-3 rounded-lg text-xs font-bold border border-white/10 flex items-center justify-center space-x-2 transition-transform active:scale-95">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span>Leer Manual</span>
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Global Bottom Nav -->
+    <nav class="fixed bottom-0 w-full bg-[#0a0a0a]/90 backdrop-blur-xl border-t border-white/10 z-50 pb-safe">
+        <div class="grid grid-cols-3 h-16 items-center max-w-lg mx-auto">
+            <a href="/dashboard/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Inicio</span>
+            </a>
+
+            <a href="/tools/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-brand-neon relative group">
+                <div class="absolute -top-3 w-12 h-1 bg-brand-neon/50 blur-lg rounded-full"></div>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 group-hover:-translate-y-1 transition-transform duration-300" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-[10px] font-bold tracking-wide">Herramientas</span>
+            </a>
+
+            <a href="/profile/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Mi Cuenta</span>
+            </a>
+        </div>
+    </nav>
+
+    <script type="module" src="/style.css"></script>
+</body>
+
+</html>

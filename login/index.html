@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Member Area</title>
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body class="bg-brand-black flex items-center justify-center min-h-screen p-4">
+    <div class="glass-panel p-8 w-full max-w-sm flex flex-col items-center">
+        <img src="https://i.imgur.com/59mU5ho.png" alt="Logo" class="h-12 mb-10 object-contain">
+
+        <h2 class="text-white text-2xl font-bold mb-1 tracking-wide">Acceso Privado</h2>
+        <p class="text-gray-400 text-sm mb-8">Ingresa tu correo para continuar</p>
+
+        <form id="loginForm" class="w-full space-y-5">
+            <div>
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" id="email" required placeholder="tu@email.com"
+                    class="input-field w-full px-4 py-3 rounded-xl text-base text-center placeholder-gray-500 focus:placeholder-white/20">
+            </div>
+
+            <button type="submit"
+                class="w-full btn-primary px-4 py-4 rounded-xl shadow-neon hover:shadow-neon-hover text-sm">
+                Entrar
+            </button>
+        </form>
+
+        <button id="installBtn"
+            class="mt-6 flex items-center space-x-2 text-gray-500 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-brand-neon transition-colors"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            <span>Instalar Aplicación</span>
+        </button>
+    </div>
+
+    <!-- Install Modal -->
+    <div id="installModal" class="hidden fixed inset-0 z-[60] flex items-center justify-center px-4">
+        <!-- Backdrop -->
+        <div id="modalBackdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Content -->
+        <div
+            class="relative bg-[#141414] border border-white/10 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl animate-fade-in">
+
+            <!-- Header -->
+            <div class="px-6 py-4 border-b border-white/5 flex justify-between items-center bg-white/5">
+                <h3 class="text-white font-bold text-sm">Instalar en tu Celular</h3>
+                <button id="closeModal" class="text-gray-400 hover:text-white">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="grid grid-cols-2 border-b border-white/5">
+                <button id="tabAndroid"
+                    class="py-3 text-xs font-bold text-brand-neon border-b-2 border-brand-neon bg-white/5 transition-colors uppercase tracking-wider">
+                    🤖 Android
+                </button>
+                <button id="tabIOS"
+                    class="py-3 text-xs font-bold text-gray-500 hover:text-white border-b-2 border-transparent transition-colors uppercase tracking-wider">
+                    🍎 iPhone
+                </button>
+            </div>
+
+            <!-- Body -->
+            <div class="p-6 text-center space-y-6 min-h-[200px] flex flex-col justify-center">
+
+                <!-- Android Content -->
+                <div id="contentAndroid" class="space-y-4">
+                    <div class="space-y-3 text-sm text-gray-300">
+                        <p class="flex items-center justify-center gap-2">
+                            <span>1. Abre esta página en</span>
+                            <span class="font-bold text-white">Chrome</span>
+                        </p>
+                        <p class="flex items-center justify-center gap-2">
+                            <span>2. Toca los tres puntos</span>
+                            <span class="bg-gray-700 px-1.5 rounded text-white font-bold">⋮</span>
+                            <span>arriba</span>
+                        </p>
+                        <p class="flex items-center justify-center gap-2">
+                            <span>3. Selecciona</span>
+                            <span class="text-brand-neon font-bold">"Instalar aplicación"</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- iOS Content -->
+                <div id="contentIOS" class="hidden space-y-4">
+                    <div class="space-y-3 text-sm text-gray-300">
+                        <p class="flex items-center justify-center gap-2">
+                            <span>1. Abre esta página en</span>
+                            <span class="font-bold text-white">Safari</span>
+                        </p>
+                        <p class="flex items-center justify-center gap-2">
+                            <span>2. Toca el botón Compartir</span>
+                            <svg class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M15 8l-5-5-5 5h3v7h4V8h3zM5 18h10v-2H5v2z" />
+                            </svg>
+                            <span>abajo</span>
+                        </p>
+                        <p class="flex items-center justify-center gap-2">
+                            <span>3. Elige</span>
+                            <span class="text-white font-bold">"Agregar a Inicio"</span>
+                            <span class="bg-gray-700 px-1.5 rounded text-white font-bold text-xs">+</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="px-6 py-3 bg-black/40 border-t border-white/5 text-center">
+                <p class="text-[10px] text-gray-500">⚡ No ocupa espacio en tu memoria</p>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script type="module" src="/login/login.js"></script>
+</body>
+
+</html>

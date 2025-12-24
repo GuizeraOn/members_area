@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculadora - Member Area</title>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body
+    class="bg-brand-black min-h-screen flex flex-col pb-24 font-sans selection:bg-brand-neon selection:text-black text-white">
+
+    <!-- Top Nav -->
+    <nav
+        class="fixed top-0 w-full z-50 flex items-center bg-black/90 backdrop-blur-md h-16 shrink-0 border-b border-white/5">
+        <div class="px-4 w-full flex items-center justify-between">
+            <a href="/tools/"
+                class="flex items-center text-gray-400 hover:text-brand-neon transition-colors py-2 group">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-1 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                <span class="text-xs font-medium uppercase tracking-wider">Herramientas</span>
+            </a>
+
+            <h1 class="text-sm font-bold tracking-wider text-white uppercase truncate">Simulador</h1>
+
+            <div class="w-10"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 w-full max-w-lg mx-auto pt-20 px-6 animate-fade-in">
+
+        <div class="mb-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-2 leading-tight">Proyección de Riqueza</h2>
+            <p class="text-gray-400 text-xs uppercase tracking-widest">El poder del interés compuesto</p>
+        </div>
+
+        <!-- Controls Section -->
+        <div
+            class="glass-panel p-6 mb-8 bg-[#141414]/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl space-y-6">
+
+            <!-- Input 1: Monthly Investment -->
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wide">Inversión Mensual</label>
+                    <span id="monthlyDisplay"
+                        class="text-brand-neon font-mono font-bold text-lg border-b border-brand-neon/30">$300</span>
+                </div>
+                <input type="range" id="monthlyInput" min="50" max="5000" step="50" value="300"
+                    class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brand-neon hover:accent-[#39ff14]">
+            </div>
+
+            <!-- Input 2: Time -->
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wide">Tiempo (Años)</label>
+                    <span id="yearsDisplay" class="text-white font-mono font-bold text-lg border-b border-white/20">10
+                        Años</span>
+                </div>
+                <input type="range" id="yearsInput" min="1" max="40" step="1" value="10"
+                    class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-white hover:accent-gray-200">
+            </div>
+
+            <!-- Input 3: Initial Deposit -->
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wide">Aporte Inicial
+                        (Opcional)</label>
+                    <span id="initialDisplay"
+                        class="text-gray-300 font-mono font-bold text-lg border-b border-gray-500/30">$0</span>
+                </div>
+                <input type="range" id="initialInput" min="0" max="50000" step="1000" value="0"
+                    class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-gray-400 hover:accent-gray-300">
+            </div>
+
+        </div>
+
+        <!-- Output Cards -->
+        <div class="grid grid-cols-1 gap-4 mb-8">
+
+            <!-- Main Result: Total Wealth -->
+            <div
+                class="bg-gradient-to-br from-[#0a0a0a] to-[#121212] p-6 rounded-2xl border border-brand-neon/40 shadow-[0_0_20px_rgba(57,255,20,0.15)] relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-brand-neon/10 blur-[50px] rounded-full"></div>
+                <p class="text-[10px] text-brand-neon uppercase tracking-[0.2em] font-bold mb-1">Patrimonio Total
+                    Estimado</p>
+                <h3 id="totalWealth" class="text-4xl font-mono font-bold text-white tracking-tighter">$0</h3>
+                <p class="text-[10px] text-gray-500 mt-2">Vs. <span id="savingWealth"
+                        class="text-gray-400 font-mono">$0</span> en ahorro tradicional</p>
+            </div>
+
+            <!-- Result: Passive Income -->
+            <div class="bg-[#141414] p-5 rounded-2xl border border-white/5 shadow-lg flex items-center justify-between">
+                <div>
+                    <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold mb-1">Renta Mensual Pasiva
+                    </p>
+                    <h3 id="passiveIncome" class="text-2xl font-mono font-bold text-brand-neon tracking-tight">$0<span
+                            class="text-sm text-gray-500 font-sans font-normal">/mes</span></h3>
+                </div>
+                <div class="h-10 w-10 bg-brand-neon/10 rounded-full flex items-center justify-center text-brand-neon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Comparison Badge -->
+            <div class="bg-gray-800/50 rounded-lg p-3 text-center border border-white/5">
+                <p class="text-xs text-gray-300">🚀 Estás generando <span id="multiplier"
+                        class="text-brand-neon font-bold">1X</span> más que dejando el dinero parado.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Chart Container (Full Width on Mobile) -->
+    <div class="w-full bg-[#0d0d0d] border-t border-white/5 pb-24 pt-6 px-4">
+        <div class="max-w-lg mx-auto">
+            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 text-center">Curva de Crecimiento
+                Exponencial</h4>
+            <div class="relative h-64 w-full">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Global Bottom Nav -->
+    <nav class="fixed bottom-0 w-full bg-[#0a0a0a]/90 backdrop-blur-xl border-t border-white/10 z-50 pb-safe">
+        <div class="grid grid-cols-3 h-16 items-center max-w-lg mx-auto">
+            <a href="/dashboard/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Inicio</span>
+            </a>
+
+            <a href="/tools/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-brand-neon relative group">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 group-hover:-translate-y-1 transition-transform duration-300" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-[10px] font-bold tracking-wide">Herramientas</span>
+            </a>
+
+            <a href="/profile/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Mi Cuenta</span>
+            </a>
+        </div>
+    </nav>
+
+    <script type="module" src="/simulator/simulator.js"></script>
+</body>
+
+</html>

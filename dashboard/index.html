@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Member Area</title>
+</head>
+
+<body class="bg-brand-black min-h-screen flex flex-col pb-10 font-sans selection:bg-brand-neon selection:text-black">
+    <!-- Header -->
+    <header
+        class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5">
+        <img src="https://i.imgur.com/59mU5ho.png" alt="Logo" class="h-8 object-contain">
+        <div class="user-icon relative">
+            <div
+                class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-neon to-brand-green-dim p-[2px] shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                <div class="w-full h-full rounded-full bg-black flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 p-6 max-w-lg mx-auto w-full pt-28 animate-fade-in">
+        <!-- Progress Widget -->
+        <div
+            class="mb-10 p-6 rounded-2xl bg-[#141414]/70 backdrop-blur-md border border-white/5 shadow-2xl relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-neon/5 to-transparent opacity-50"></div>
+
+            <div class="relative z-10 flex justify-between items-end mb-4">
+                <div>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Tu Progreso</p>
+                    <h2 class="text-2xl font-bold text-white">0% Completado</h2>
+                </div>
+                <div
+                    class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-neon/10 text-brand-neon border border-brand-neon/20 shadow-[0_0_10px_rgba(57,255,20,0.2)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="relative h-2 w-full bg-gray-800 rounded-full overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 h-full w-[0%] bg-brand-neon shadow-[0_0_12px_#39ff14] transition-all duration-1000">
+                </div>
+            </div>
+
+            <p id="userEmailDisplay" class="mt-4 text-xs font-mono text-gray-500 truncate flex items-center">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-neon mr-2 animate-pulse"></span>
+                <span id="email-text">...</span>
+            </p>
+        </div>
+
+        <h3 class="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-4 pl-1">Módulos de Entrenamiento</h3>
+
+        <div class="space-y-4">
+
+            <!-- Module 1 -->
+            <a href="/module/?id=renta"
+                class="block group relative overflow-hidden rounded-2xl bg-[#141414]/70 backdrop-blur-md border border-white/5 hover:border-brand-neon/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.15)]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-neon/0 via-brand-neon/0 to-brand-neon/5 group-hover:via-brand-neon/10 transition-all duration-500">
+                </div>
+                <div class="relative p-6 flex items-center justify-between z-10">
+                    <div class="flex-1 pr-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-brand-neon/10 text-brand-neon border border-brand-neon/20 uppercase tracking-wide">Core
+                                Strategy</span>
+                            <span class="flex items-center text-[10px] text-gray-500"><svg class="w-3 h-3 mr-1"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg> 20 min</span>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-white leading-snug group-hover:text-brand-neon transition-colors">
+                            El Código de la Renta Vitalicia</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-light">Estrategia Pura • Fundamentos</p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2">
+                        <div
+                            class="w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center group-hover:border-brand-neon group-hover:bg-brand-neon text-white group-hover:text-black transition-all shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span
+                            class="text-[10px] text-gray-600 font-medium group-hover:text-brand-neon transition-colors">Iniciar</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Module 2 -->
+            <a href="/module/?id=ordenando"
+                class="block group relative overflow-hidden rounded-2xl bg-[#141414]/70 backdrop-blur-md border border-white/5 hover:border-brand-neon/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.15)]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-neon/0 via-brand-neon/0 to-brand-neon/5 group-hover:via-brand-neon/10 transition-all duration-500">
+                </div>
+                <div class="relative p-6 flex items-center justify-between z-10">
+                    <div class="flex-1 pr-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/5 text-gray-400 border border-white/10 uppercase tracking-wide group-hover:text-white transition-colors">Finanzas</span>
+                            <svg class="w-3 h-3 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-white leading-snug group-hover:text-brand-neon transition-colors">
+                            Ordenando la Casa</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-light">Organización • Control Total</p>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <div
+                            class="w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center group-hover:border-brand-neon group-hover:bg-brand-neon text-gray-500 group-hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Module 3 -->
+            <a href="/module/?id=carteras"
+                class="block group relative overflow-hidden rounded-2xl bg-[#141414]/70 backdrop-blur-md border border-white/5 hover:border-brand-neon/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.15)]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-neon/0 via-brand-neon/0 to-brand-neon/5 group-hover:via-brand-neon/10 transition-all duration-500">
+                </div>
+                <div class="relative p-6 flex items-center justify-between z-10">
+                    <div class="flex-1 pr-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/5 text-gray-400 border border-white/10 uppercase tracking-wide group-hover:text-white transition-colors">Portfolios</span>
+                            <svg class="w-3 h-3 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-white leading-snug group-hover:text-brand-neon transition-colors">
+                            Las 3 Carteras de Oro</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-light">Copy & Paste • Alto Rendimiento</p>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <div
+                            class="w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center group-hover:border-brand-neon group-hover:bg-brand-neon text-gray-500 group-hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Module 4 -->
+            <a href="/module/?id=globales"
+                class="block group relative overflow-hidden rounded-2xl bg-[#141414]/70 backdrop-blur-md border border-white/5 hover:border-brand-neon/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.15)]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-neon/0 via-brand-neon/0 to-brand-neon/5 group-hover:via-brand-neon/10 transition-all duration-500">
+                </div>
+                <div class="relative p-6 flex items-center justify-between z-10">
+                    <div class="flex-1 pr-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/5 text-gray-400 border border-white/10 uppercase tracking-wide group-hover:text-white transition-colors">Global</span>
+                            <svg class="w-3 h-3 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-white leading-snug group-hover:text-brand-neon transition-colors">
+                            Inversiones Globales</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-light">Dollarize • Protección</p>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <div
+                            class="w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center group-hover:border-brand-neon group-hover:bg-brand-neon text-gray-500 group-hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Module 5 -->
+            <a href="/module/?id=herederos"
+                class="block group relative overflow-hidden rounded-2xl bg-[#141414]/70 backdrop-blur-md border border-white/5 hover:border-brand-neon/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.15)]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-neon/0 via-brand-neon/0 to-brand-neon/5 group-hover:via-brand-neon/10 transition-all duration-500">
+                </div>
+                <div class="relative p-6 flex items-center justify-between z-10">
+                    <div class="flex-1 pr-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/5 text-gray-400 border border-white/10 uppercase tracking-wide group-hover:text-white transition-colors">Legacy</span>
+                            <svg class="w-3 h-3 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-white leading-snug group-hover:text-brand-neon transition-colors">
+                            Fábrica de Herederos</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-light">Dividendos • Libertad</p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2">
+                        <div
+                            class="w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center group-hover:border-brand-neon group-hover:bg-brand-neon text-gray-500 group-hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        </div>
+    </main>
+
+    <!-- Global Bottom Nav -->
+    <nav class="fixed bottom-0 w-full bg-[#0a0a0a]/90 backdrop-blur-xl border-t border-white/10 z-50 pb-safe">
+        <div class="grid grid-cols-3 h-16 items-center max-w-lg mx-auto">
+            <a href="/dashboard/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-brand-neon relative group">
+                <div class="absolute -top-3 w-12 h-1 bg-brand-neon/50 blur-lg rounded-full"></div>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 group-hover:-translate-y-1 transition-transform duration-300" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="text-[10px] font-bold tracking-wide">Inicio</span>
+            </a>
+
+            <a href="/tools/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Herramientas</span>
+            </a>
+
+            <a href="/profile/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Mi Cuenta</span>
+            </a>
+        </div>
+    </nav>
+
+    <script type="module" src="/dashboard/dashboard.js"></script>
+    <script>
+        // Quick inline update for the email display
+        const email = localStorage.getItem('userEmail');
+        if (email) document.getElementById('email-text').textContent = email;
+    </script>
+</body>
+
+</html>

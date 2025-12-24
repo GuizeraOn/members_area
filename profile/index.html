@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mi Cuenta - Member Area</title>
+</head>
+
+<body class="bg-brand-black min-h-screen flex flex-col pb-24 font-sans selection:bg-brand-neon selection:text-black">
+
+    <!-- Top Nav -->
+    <nav
+        class="fixed top-0 w-full z-50 flex items-center bg-black/90 backdrop-blur-md h-16 shrink-0 border-b border-white/5">
+        <div class="px-6 w-full flex items-center justify-between">
+            <h1 class="text-sm font-bold tracking-wider text-white uppercase truncate">Mi Cuenta / Perfil</h1>
+            <div class="w-10"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col relative w-full pt-20 px-6 animate-fade-in">
+
+        <!-- Member Card "The Passport" -->
+        <div
+            class="w-full relative aspect-video rounded-xl overflow-hidden shadow-2xl mb-8 group transform transition-all duration-500 hover:scale-[1.02]">
+            <!-- Card Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-black to-[#0a0a0a]"></div>
+            <div
+                class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20">
+            </div>
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-neon/20 blur-[60px] rounded-full"></div>
+
+            <!-- Card Content -->
+            <div class="relative z-10 p-6 flex flex-col justify-between h-full">
+                <div class="flex justify-between items-start">
+                    <img src="https://i.imgur.com/59mU5ho.png" alt="Logo"
+                        class="h-6 object-contain opacity-80 mix-blend-screen">
+                    <div
+                        class="px-3 py-1 rounded border border-brand-neon/30 bg-brand-neon/10 text-brand-neon text-[10px] font-bold tracking-widest uppercase shadow-[0_0_10px_rgba(57,255,20,0.2)]">
+                        Socio Vitalicio
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Titular de la Membresía</p>
+                    <h2 id="userName" class="text-xl font-mono text-white tracking-tight mb-0.5">Gabriel Navarro</h2>
+                    <p class="text-[10px] text-gray-600 font-mono">ID: <span class="text-gray-400">8829-X-2024</span> •
+                        EST: <span class="text-brand-neon">ACTIVE</span></p>
+                </div>
+            </div>
+
+            <!-- Shine Effect -->
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out">
+            </div>
+        </div>
+
+        <!-- Settings Form -->
+        <div class="space-y-6">
+            <div class="space-y-4">
+                <h3 class="text-white text-sm font-bold uppercase tracking-wide border-b border-white/10 pb-2">
+                    Credenciales de Acceso</h3>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-brand-neon uppercase font-bold tracking-wider ml-1">Email
+                        Registrado</label>
+                    <div class="glass-panel px-4 py-3 flex items-center justify-between text-gray-400">
+                        <span id="userEmail" class="font-mono text-sm">usuario@email.com</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-brand-neon uppercase font-bold tracking-wider ml-1">Contraseña</label>
+                    <button
+                        class="w-full glass-panel px-4 py-3 flex items-center justify-between hover:bg-white/5 transition-colors group text-left">
+                        <span class="text-white text-sm">••••••••••••</span>
+                        <span
+                            class="text-[10px] text-brand-neon underline opacity-0 group-hover:opacity-100 transition-opacity">Cambiar</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="space-y-4 pt-4">
+                <h3 class="text-white text-sm font-bold uppercase tracking-wide border-b border-white/10 pb-2">
+                    Preferencias</h3>
+
+                <div class="flex items-center justify-between glass-panel p-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 rounded-full bg-white/5 text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                        </div>
+                        <span class="text-sm text-white">Notificaciones Push</span>
+                    </div>
+
+                    <!-- Switch -->
+                    <div
+                        class="relative inline-flex h-6 w-11 items-center rounded-full bg-brand-neon/20 border border-brand-neon/40 cursor-pointer">
+                        <span
+                            class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-brand-neon transition shadow-lg"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 pb-4 flex justify-center">
+                <button onclick="localStorage.removeItem('userEmail'); window.location.href='/login/'"
+                    class="text-red-500/70 hover:text-red-500 text-xs font-bold uppercase tracking-widest transition-colors flex items-center space-x-2 border-b border-transparent hover:border-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    <span>Cerrar Sesión Segura</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Global Bottom Nav -->
+    <nav class="fixed bottom-0 w-full bg-[#0a0a0a]/90 backdrop-blur-xl border-t border-white/10 z-50 pb-safe">
+        <div class="grid grid-cols-3 h-16 items-center max-w-lg mx-auto">
+            <a href="/dashboard/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Inicio</span>
+            </a>
+
+            <a href="/tools/"
+                class="flex flex-col items-center justify-center space-y-1 h-full group text-gray-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 group-hover:-translate-y-1 transition-transform duration-300" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-[10px] font-medium tracking-wide">Herramientas</span>
+            </a>
+
+            <a href="/profile/"
+                class="flex flex-col items-center justify-center space-y-1 h-full text-brand-neon relative">
+                <div class="absolute -top-3 w-12 h-1 bg-brand-neon/50 blur-lg rounded-full"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span class="text-[10px] font-bold tracking-wide">Mi Cuenta</span>
+            </a>
+        </div>
+    </nav>
+
+    <script type="module" src="/profile/profile.js"></script>
+</body>
+
+</html>

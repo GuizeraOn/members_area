@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lesson - Member Area</title>
+</head>
+
+<body
+    class="bg-brand-black min-h-screen flex flex-col overflow-hidden font-sans selection:bg-brand-neon selection:text-black">
+
+    <!-- Top Nav -->
+    <nav
+        class="fixed top-0 w-full z-50 flex items-center bg-black/90 backdrop-blur-md h-16 shrink-0 border-b border-white/5">
+        <div class="px-4 w-full flex items-center justify-between">
+            <a href="/dashboard/"
+                class="flex items-center text-gray-400 hover:text-brand-neon transition-colors py-2 group relative z-50">
+                <div class="p-2 rounded-full bg-white/5 group-hover:bg-brand-neon/10 transition-colors mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+                <span class="text-sm font-medium tracking-wide uppercase">Dashboard</span>
+            </a>
+
+            <h1 id="moduleTitle"
+                class="absolute left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-white max-w-[40%] text-center uppercase truncate">
+                Cargando...
+            </h1>
+
+            <div class="w-20"></div> <!-- Spacer -->
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col relative w-full bg-black pt-16 pb-20 overflow-y-auto">
+
+        <!-- Audio Briefing Header -->
+        <div class="w-full max-w-4xl mx-auto px-4 pt-6 pb-2">
+            <div class="bg-[#141414] border border-white/10 rounded-xl p-4 flex items-center justify-between shadow-lg">
+                <div class="flex items-center space-x-4">
+                    <div
+                        class="h-10 w-10 rounded-full bg-brand-neon flex items-center justify-center text-black shadow-[0_0_10px_#39ff14]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-0.5" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-brand-neon uppercase tracking-widest font-bold">Briefing de
+                            Inteligencia</p>
+                        <h2 class="text-white text-sm font-medium">Resumen Estratégico del Módulo</h2>
+                    </div>
+                </div>
+                <div class="hidden sm:block">
+                    <div class="h-1 w-24 bg-gray-800 rounded-full overflow-hidden">
+                        <div class="h-full w-1/3 bg-brand-neon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iframe Container -->
+        <div class="flex-1 w-full max-w-6xl mx-auto relative px-0 sm:px-4 py-4 min-h-[500px]">
+            <div class="absolute inset-0 w-full h-full sm:rounded-2xl overflow-hidden border border-white/5 bg-[#0a0a0a]"
+                id="iframeContainer">
+                <div class="w-full h-full flex items-center justify-center text-gray-500">
+                    <div
+                        class="animate-spin rounded-full h-12 w-12 border-t-2 border-brand-neon border-r-2 border-transparent shadow-[0_0_15px_rgba(57,255,20,0.5)]">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Sticky Bottom Action Bar -->
+    <footer class="fixed bottom-0 w-full bg-[#0a0a0a]/90 backdrop-blur-xl border-t border-white/10 z-40 pb-safe">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xs text-gray-500 hidden sm:block">
+                Estado: <span class="text-brand-neon">En Progreso</span>
+            </div>
+            <button
+                class="w-full sm:w-auto flex-1 sm:flex-none btn-primary px-8 py-3 rounded-xl shadow-[0_0_20px_rgba(57,255,20,0.3)] hover:shadow-[0_0_30px_rgba(57,255,20,0.5)] text-sm font-bold flex items-center justify-center space-x-2 transition-all active:scale-95 group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:scale-110"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Marcar como Concluido</span>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Floating Support Button -->
+    <a href="#"
+        class="fixed bottom-24 right-4 z-50 bg-[#25D366] text-white p-3 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 flex items-center space-x-2 px-4 group">
+        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.683-2.031-.967-.272-.297-.471-.446-.744-.57-.272-.124-.57-.124-.867-.124-.241 0-.456.077-.693.322-.224.223-.867.843-.867 2.056 0 1.214.891 2.386 1.016 2.56.124.174 1.758 2.682 4.259 3.761 1.761.76 2.456.76 3.327.674.867-.099 1.93-1.015 2.155-1.931.223-.917.223-1.761.124-1.909z" />
+        </svg>
+        <span class="text-sm font-bold hidden group-hover:block whitespace-nowrap">Soporte VIP</span>
+    </a>
+
+    <script type="module" src="/module/module.js"></script>
+</body>
+
+</html>
