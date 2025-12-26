@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Oficial - De Cero a Inversionista</title>
+    <style>
+        /* Force A4 Size and Print Colors */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 210mm x 297mm approx values in px for screen preview, but @page handles PDF */
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background-color: #000000;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-image: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000000 70%);
+        }
+
+        /* Screen preview adjustment */
+        @media screen {
+            body {
+                margin: 20px auto;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid #333;
+            /* Visual border aid */
+        }
+
+        /* Logo Placeholder */
+        .logo {
+            width: 180px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #fff, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Fallback for PDF text selection if gradient fails in some print drivers */
+            color: white;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #39ff14;
+            /* Neon Green */
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+        }
+
+        /* The Card Container similar to the web profile */
+        .access-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 20px;
+            padding: 50px 40px;
+            width: 80%;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .access-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #39ff14, transparent, transparent);
+            z-index: -1;
+            border-radius: 22px;
+            opacity: 0.3;
+        }
+
+        .action-btn {
+            display: block;
+            width: 100%;
+            background-color: #39ff14;
+            color: #000000;
+            font-size: 18px;
+            font-weight: 800;
+            text-decoration: none;
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .url-text {
+            color: #666;
+            font-size: 12px;
+            font-family: monospace;
+            text-decoration: none;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .step {
+            max-width: 200px;
+        }
+
+        .step-icon {
+            font-size: 24px;
+            color: #39ff14;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .qr-img {
+            width: 120px;
+            height: 120px;
+            background-color: #000;
+            /* Placeholder for actual QR */
+            background-image: url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://de-cero-a-inversionista.vercel.app');
+            background-size: cover;
+        }
+
+        .footer {
+            margin-top: auto;
+            font-size: 12px;
+            color: #444;
+            border-top: 1px solid #222;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        /* Helper to ensure text rendering in PDF */
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        a {
+            text-rendering: optimizeLegibility;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Logo -->
+        <img src="https://i.imgur.com/59mU5ho.png" alt="Logo" class="logo">
+
+        <!-- Headlines -->
+        <h1>Tu Acceso Oficial</h1>
+        <h2>Bienvenido a la comunidad del 1%</h2>
+
+        <!-- Main Action Card -->
+        <div class="access-card">
+
+            <a href="https://de-cero-a-inversionista.vercel.app" target="_blank" class="action-btn">
+                ACCEDER A LA PLATAFORMA AHORA ➜
+            </a>
+
+            <a href="https://de-cero-a-inversionista.vercel.app" target="_blank" class="url-text">
+                https://de-cero-a-inversionista.vercel.app
+            </a>
+
+        </div>
+
+        <!-- Instructions -->
+        <div class="steps-container">
+            <div class="step">
+                <span class="step-icon">👇</span>
+                <p><strong>1. Toca el botón</strong><br>Haz clic en el botón verde de arriba para abrir el portal.</p>
+            </div>
+            <div class="step">
+                <span class="step-icon">📧</span>
+                <p><strong>2. Usa tu correo</strong><br>Ingresa el email que usaste en la compra.</p>
+            </div>
+            <div class="step">
+                <span class="step-icon">🔓</span>
+                <p><strong>3. Sin contraseñas</strong><br>El sistema te reconocerá automáticamente.</p>
+            </div>
+        </div>
+
+        <!-- QR Code -->
+        <div style="margin-bottom: 20px;">
+            <div class="qr-section">
+                <!-- Using a public API to generate a real QR for the URL for realism -->
+                <div class="qr-img"></div>
+            </div>
+            <p style="color: #666; font-size: 12px; margin-top: 10px;">¿Estás en PC? Escanea para entrar con tu celular.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>¿Necesitas ayuda? Contacta a <span style="color: #fff;">soporte@navarro.com</span></p>
+            <p style="margin-top: 5px;">Membresía Vitalicia • De Cero a Inversionista © 2024</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
